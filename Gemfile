@@ -37,12 +37,14 @@ gem 'jbuilder', '~> 2.5'
 gem "trailblazer-rails"
 gem "trailblazer-loader"
 gem "reform", "~> 2.1.0"
+gem "haml"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "minitest-rails-capybara"
   gem 'minitest-spec-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
