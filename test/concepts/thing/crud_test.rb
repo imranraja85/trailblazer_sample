@@ -1,3 +1,5 @@
+require 'test_helper'
+
 class ThingCrudTest < MiniTest::Spec
   describe "Create" do
     it 'persists valid' do
