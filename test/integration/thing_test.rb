@@ -8,6 +8,13 @@ class ThingIntegrationTest < Trailblazer::Test::Integration
     page.must_have_css '.error'
   end
 
+  it 'allows anonymous' do
+    visit '/things/new'
+
+    page.must_have_css "form #thing_name"
+    page.wont_have_css "form #thing_name.readonly"
+  end
+
   it 'has an invalid description' do
     res, op = Thing::Create.run(thing: {name: 'Rails', description: "hi"})
 
@@ -15,4 +22,6 @@ class ThingIntegrationTest < Trailblazer::Test::Integration
     op.contract.errors.to_s.must_equal \
       "{:description=>[\"is too short (minimum is 4 characters)\"]}"
   end
+
+
 end

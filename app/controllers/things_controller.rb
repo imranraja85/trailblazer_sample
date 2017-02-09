@@ -10,4 +10,10 @@ class ThingsController < ApplicationController
   def new
     form Thing::Create # instansitae its model without running any processing code
   end
+
+  def edit
+    form Thing::Update
+
+    render action: :new
+  end
 end
