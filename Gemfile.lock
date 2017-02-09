@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/haml/haml.git
+  revision: 7c7c16930b7fefd6dd9869a3af73f8d86c673b77
+  ref: 7c7c169
+  specs:
+    haml (4.1.0.beta.1)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -50,6 +58,12 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cells (4.0.3)
+      tilt (>= 1.4, < 3)
+      uber (~> 0.0.9)
+    cells-haml (0.0.8)
+      cells (~> 4.0.0.beta6)
+      haml (>= 4.1.0.beta.1)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -71,8 +85,6 @@ GEM
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    haml (4.0.7)
-      tilt
     i18n (0.8.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -216,8 +228,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cells (= 4.0.3)
+  cells-haml (= 0.0.8)
   coffee-rails (~> 4.2)
-  haml
+  haml!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

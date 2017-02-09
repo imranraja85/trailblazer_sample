@@ -1,0 +1,11 @@
+// A cell does not know about its request format
+// It doesnt know if its going to render html to json.
+// Different UI formats are handled with different cells.
+
+// Cells are called view models because they wrap a model
+// You can define instance methods on a cell.
+
+.columns.large-3
+  .header
+    = link_to model.name, thing_path(model)
+  .info

@@ -37,7 +37,11 @@ gem 'jbuilder', '~> 2.5'
 gem "trailblazer-rails"
 gem "trailblazer-loader"
 gem "reform", "~> 2.1.0"
-gem "haml"
+
+gem 'cells', "4.0.3"
+gem 'cells-haml',  "0.0.8"
+# gem "haml"
+gem "haml", github: "haml/haml", ref: "7c7c169"
 gem "simple_form"
 
 group :development, :test do
