@@ -1,3 +1,10 @@
+// Cells provide OO encapsulation for views.
+
+// Cells let you implement parts of your UI into separate components.
+
+
+// Every cell requires an object to wrap. It really be anything: a single object, a collection, an openstruct
+
 // A cell does not know about its request format
 // It doesnt know if its going to render html to json.
 // Different UI formats are handled with different cells.
@@ -9,3 +16,4 @@
   .header
     = link_to model.name, thing_path(model)
   .info
+    = created_at

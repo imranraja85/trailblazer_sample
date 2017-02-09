@@ -1,5 +1,9 @@
 class Thing::Cell < Cell::Concept
+  include ActionView::Helpers::DateHelper
+  include Rails::Timeago::Helper
+
   property :name
+  property :created_at
 
   def show
     render
@@ -11,6 +15,6 @@ private
   end
 
   def created_at
-    "some fake created at date because i forgot to add a created at fields"
+    timeago_tag(super)
   end
 end
