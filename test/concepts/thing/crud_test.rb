@@ -27,4 +27,25 @@ class ThingCrudTest < MiniTest::Spec
         "{:description=>[\"is too short (minimum is 4 characters)\"]}"
     end
   end
+
+  describe "Update" do
+    let (:thing) do
+      Thing::Create.
+        (thing: {name: "Rails", description: "Kick ass web dev"}).model
+    end
+
+    it 'persists valid, ignores name' do
+      Thing::Update.(
+        id: thing.id,
+        thing: {
+          name: 'Lotus',
+          description: 'Simply better'
+        }
+      )
+
+      thing.reload
+      thing.name.must_equal "Rails"
+      thing.description.must_equal "Simply better"
+    end
+  end
 end
