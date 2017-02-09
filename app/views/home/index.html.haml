@@ -2,4 +2,5 @@
   Welcome to Gemgem!
 
 .row
-  = concept("thing/cell", Thing.last)
+  - things = Thing.all
+  = concept("thing/cell", collection: things, last: things.last)
