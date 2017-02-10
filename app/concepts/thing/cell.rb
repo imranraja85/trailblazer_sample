@@ -1,4 +1,5 @@
 class Thing::Cell < Cell::Concept
+
   include ActionView::Helpers::DateHelper
   include Rails::Timeago::Helper
 
@@ -7,6 +8,13 @@ class Thing::Cell < Cell::Concept
 
   def show
     render
+  end
+
+  class Grid < Cell::Concept
+    def show
+      things = Thing.all
+      concept("thing/cell", collection: things, last: things.last)
+    end
   end
 
 private
@@ -24,4 +32,5 @@ private
     classes << "end" if options[:last] == model
     classes
   end
+
 end
